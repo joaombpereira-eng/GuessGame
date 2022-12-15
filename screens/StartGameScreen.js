@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, TextInput, Alert} from 'react-native';
+import {View, StyleSheet, TextInput, Alert, Text} from 'react-native';
+import Card from '../components/ui/Card';
+import InstructionText from '../components/ui/InstructionText';
 
 import PrimaryButton from '../components/ui/PrimaryButton';
+import Title from '../components/ui/Title';
 import Colors from '../constants/colors';
 
 export default function StartGameScreen({onPickNumber}) {
@@ -31,42 +34,37 @@ export default function StartGameScreen({onPickNumber}) {
   }
 
   return (
-    <View style={styles.inputContainer}>
-      <TextInput
-        style={styles.numberInput}
-        maxLength={2}
-        keyboardType="number-pad"
-        autoCapitalize="none"
-        autoCorrect={false}
-        value={enteredNumber}
-        onChangeText={numberInputHandle}
-      />
-      <View style={styles.buttonsContainer}>
-        <View style={styles.buttonContainer}>
-          <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+    <View style={styles.rootContainer}>
+      <Title>Guess My Number</Title>
+      <Card>
+        <InstructionText>Enter Number</InstructionText>
+        <TextInput
+          style={styles.numberInput}
+          maxLength={2}
+          keyboardType="number-pad"
+          autoCapitalize="none"
+          autoCorrect={false}
+          value={enteredNumber}
+          onChangeText={numberInputHandle}
+        />
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+          </View>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={confirmInputHandle}>Confirm</PrimaryButton>
+          </View>
         </View>
-        <View style={styles.buttonContainer}>
-          <PrimaryButton onPress={confirmInputHandle}>Confirm</PrimaryButton>
-        </View>
-      </View>
+      </Card>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  inputContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  rootContainer: {
+    flex: 1,
     marginTop: 100,
-    marginHorizontal: 24,
-    padding: 16,
-    backgroundColor: Colors.primary800,
-    borderRadius: 8,
-    elevation: 4, //Shadow - Android Only
-    shadowColor: 'black', // Shadow - iOS Only
-    shadowOffset: {width: 0, height: 2}, // Shadow - iOS Only
-    shadowRadius: 6, // Shadow - iOS Only
-    shadowOpacity: 0.25, // Shadow - iOS Only
+    alignItems: 'center',
   },
   numberInput: {
     height: 55,
