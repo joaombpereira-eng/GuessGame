@@ -1,5 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, TextInput} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+
 import PrimaryButton from '../components/PrimaryButton';
 
 export default function StartGameScreen() {
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     marginTop: 100,
     marginHorizontal: 24,
     padding: 16,
-    backgroundColor: '#4E0329',
+    backgroundColor: '#3B021F',
     borderRadius: 8,
     elevation: 4, //Shadow - Android Only
     shadowColor: 'black', // Shadow - iOS Only
