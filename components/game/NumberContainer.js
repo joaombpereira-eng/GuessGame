@@ -1,5 +1,6 @@
 import {View, Text, StyleSheet} from 'react-native';
 import Colors from '../../constants/colors';
+import FontFamily from '../../constants/fontFamily';
 
 export default function NumberContiner({children}) {
   return (
@@ -22,6 +23,6 @@ const styles = StyleSheet.create({
   numberText: {
     color: Colors.accent500,
     fontSize: 36,
-    fontWeight: 'bold',
+    fontFamily: FontFamily.openSansBold,
   },
 });

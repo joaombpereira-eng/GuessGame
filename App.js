@@ -37,7 +37,7 @@ export default function App() {
       colors={[Colors.primary700, Colors.accent500]}
       style={styles.rootScreen}>
       <ImageBackground
-        source={require('./assets/images/background.png')}
+        source={require('./assets/imgs/background.png')}
         resizeMode="cover"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}>
